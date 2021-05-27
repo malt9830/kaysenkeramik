@@ -9,7 +9,8 @@ Author:			Gruppe 03
 /*----------general----------*/
 
 body,
-.singular .entry-header {
+.singular .entry-header,
+.menu-modal-inner {
     background: #F7F6F2 !important;
     background-color: #F7F6F2 !important;
 }
@@ -48,4 +49,84 @@ p {
     font-family: 'Archivo', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+}
+
+/*----------header----------*/
+
+header {
+    background: #F7F6F2 !important;
+}
+
+.header-underline {
+    height: 3px;
+    background: #E3A5B4;
+}
+
+.nav-toggle .toggle-inner {
+    padding-top: 0;
+}
+
+.nav-toggle .toggle-icon {
+    height: 1.7rem;
+    place-self: center;
+}
+
+body:not(.overlay-header) .primary-menu > li > a,
+.modal-menu > li > .ancestor-wrapper > a {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #2E2E2E !important;
+}
+
+/*----------header----------*/
+
+footer,
+.footer-nav-widgets-wrapper {
+    background: #B9B39B !important;
+}
+
+.textwidget p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: white;
+}
+
+.textwidget a {
+    text-decoration: none !important;
+    text-decoration-color: white !important;
+    color: white !important;
+}
+
+.textwidget a:hover {
+    text-decoration: none !important;
+    text-decoration-color: white !important;
+    color: white !important;
+}
+
+.footer-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.footer-logo {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.fa-instagram {
+    font-size: 4rem;
+    color: white;
+}
+
+.footer-credits > * {
+    font-size: 1.7rem;
+}
+
+.footer-credits > *,
+.to-the-top {
+    color: white !important;
 }
