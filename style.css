@@ -8,20 +8,44 @@ Author:			Gruppe 03
 
 /*----------general----------*/
 
+body,
+.singular .entry-header {
+    background: #F7F6F2 !important;
+    background-color: #F7F6F2 !important;
+}
+
+
+/*----------fonts----------*/
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
+    font-weight: 400;
     color: #2E2E2E;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #2E2E2E;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 200;
     color: #2E2E2E;
 }
 
 p {
     font-family: 'Raleway Light';
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     color: #2E2E2E;
+}
+
+.site-title a {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
 }
