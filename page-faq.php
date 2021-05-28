@@ -42,7 +42,6 @@ get_header();
     function expandFAQ() {
         console.log(`expandingFAQ`);
 
-
         //Definerer indholdet og ikoner til brug i nedenfor
         let content = this.parentElement.lastElementChild;
         let icon = this.firstElementChild.lastElementChild;
