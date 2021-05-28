@@ -1,7 +1,7 @@
 /*
 Theme Name:		Kaysen Keramik Theme
 Template:		twentytwenty
-Version:		1.0.1
+Version:		1.0.3
 Description:	Twenty Twenty Child Theme
 Author:			Gruppe 03
 */
@@ -75,8 +75,8 @@ li {
     color: #2E2E2E;
 }
 
-#site-content a {
-    color: #063E9A !important;
+#site-content p a {
+    color: #E3A5B4;
 }
 
 @media (min-width: 700px) {
@@ -95,6 +95,11 @@ li {
 
 h1.entry-title {
     text-align: left;
+}
+
+.entry-header-inner {
+    max-width: 58rem !important;
+    width: calc(100% - 4rem) !important;
 }
 
 /*----------buttons----------*/
@@ -192,6 +197,11 @@ header {
     place-self: center;
 }
 
+button.close-nav-toggle img:first-child {
+    height: 22px !important;
+    width: 22px !important;
+}
+
 body:not(.overlay-header) .primary-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
     font-family: 'Montserrat', sans-serif !important;
@@ -280,5 +290,59 @@ footer,
 @media (min-width:) @media (min-width:1000px) {
     .text-logo {
         font-size: 9rem;
+    }
+}
+
+/*----------faq----------*/
+
+.faq-header div:first-child {
+    display: flex;
+    cursor: pointer;
+}
+
+.faq-header {
+    margin-bottom: 0 !important;
+}
+
+.faq-header p {
+    margin: 0;
+}
+
+.faq-content {
+    display: none;
+    transform: translateY(-5%);
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+    margin-top: 1rem !important;
+}
+
+.faq-expanded {
+    display: block;
+    animation-name: faq-expand;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+@keyframes faq-expand {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+
+.icon-plus {
+    height: 15px !important;
+    width: 15px !important;
+}
+
+@media (min-width: 700px) {
+    .icon-plus {
+        height: 20px !important;
+        width: 20px !important;
     }
 }
