@@ -17,8 +17,9 @@ $has_sidebar_3 = is_active_sidebar( 'sidebar-3' );
 // Only output the container if there are elements to display.
 if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 || $has_sidebar_3) {
 	?>
-
 <div class="footer-nav-widgets-wrapper header-footer-group">
+
+    <div class="header-underline"></div>
 
     <div class="footer-inner section-inner">
 
