@@ -23,8 +23,13 @@ img {
     width: 5rem !important;
     height: 3px;
     background: #E3A5B4;
-    transform: translateX(-50%);
     margin: 4rem 0 !important;
+}
+
+@media (min-width: 700px) {
+    .pink-divider {
+        transform: translateX(-50%);
+    }
 }
 
 .process-image-desktop {
@@ -38,6 +43,11 @@ img {
 .relative {
     position: relative;
 }
+
+.centre {
+    text-align: center;
+}
+
 
 @media (min-width:649px) {
     .process-image-mobile {
@@ -347,6 +357,22 @@ footer,
     animation-fill-mode: both;
 }
 
+.model-header div:first-child {
+    display: flex;
+    grid-gap: 2rem;
+}
+
+.model-header figure {
+    margin: 0 !important;
+    width: 9rem !important;
+}
+
+@media(min-width:700px) {
+    .model-header figure {
+        width: 10.5rem !important;
+    }
+}
+
 @keyframes faq-expand {
     0% {
         opacity: 0%;
@@ -372,7 +398,7 @@ footer,
 
 /*----------kontakt----------*/
 
-iframe {
+.iframe-map {
     height: 40vh !important;
 }
 
@@ -420,11 +446,40 @@ input[type="submit"]:hover {
     }
 }
 
+.clay-container {
+    position: relative;
+    margin: 0 auto !important;
+}
+
+.clay-container .wp-block-columns {
+    margin: 0 auto !important;
+}
+
+.clay-container figure {
+    margin: 0 auto !important;
+}
+
 .clay-text-centre {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 25rem;
+    max-width: 90% !important;
+    margin: 0 !important;
+}
+
+.clay-text-centre h3 {
+    margin-bottom: 0.5rem !important;
+}
+
+.clay-text-centre p {
+    font-weight: 600 !important;
+}
+
+/*----------about----------*/
+
+.signature img {
+    width: 65% !important;
+    margin: 0 auto !important;
 }
