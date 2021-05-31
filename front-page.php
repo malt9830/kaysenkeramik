@@ -120,6 +120,9 @@ get_header();
     let keramiktype;
     let keramiktyper;
 
+    //Definerer en variabel til at tælle hvor mange gange loopet er kørt
+    let counter = 0;
+
     //Her defineres konstanten med url'et, hvorfra json hentes
     const url = "http://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype?per_page=100"
 
@@ -138,23 +141,30 @@ get_header();
         const template = document.querySelector("template");
         const container = document.querySelector(".container");
 
+
         //Loopet for kloningen af json-dataen
         keramiktyper.forEach(keramiktype => {
             console.log("looping");
 
-            //Her defineres, klones og udfyldes templaten med json-data
-            let clone = template.cloneNode(true).content;
+            //Tilføjer én counter og tjekker om loopet skal fortsættes eller stoppes, således kun 3 kloner indsættes i DOM
+            counter++;
+            console.log(counter);
 
-            clone.querySelector("img").src = keramiktype.billede.guid;
-            clone.querySelector("img").alt = keramiktype.kort;
-            clone.querySelector("h3").textContent = keramiktype.navn;
-            clone.querySelector("p").textContent = keramiktype.kort;
-            clone.querySelector("article").addEventListener("click", () => {
-                location.href = keramiktype.link;
-            });
+            if (counter <= 3) {
+                //Her defineres, klones og udfyldes templaten med json-data
+                let clone = template.cloneNode(true).content;
 
-            //Her indsættes den klonen i DOM
-            container.appendChild(clone);
+                clone.querySelector("img").src = keramiktype.billede.guid;
+                clone.querySelector("img").alt = keramiktype.kort;
+                clone.querySelector("h3").textContent = keramiktype.navn;
+                clone.querySelector("p").textContent = keramiktype.kort;
+                clone.querySelector("article").addEventListener("click", () => {
+                    location.href = keramiktype.link;
+                });
+
+                //Her indsættes den klonen i DOM
+                container.appendChild(clone);
+            }
         })
     }
 
