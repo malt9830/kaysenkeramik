@@ -234,6 +234,12 @@ body:not(.overlay-header) .primary-menu > li > a,
 }
 
 .primary-menu li.current-menu-item > a,
+.primary-menu a {
+    font-size: 1.5rem !important;
+    text-underline-offset: 0.5rem;
+}
+
+.primary-menu li.current-menu-item > a,
 .primary-menu a:hover {
     text-decoration: underline;
     text-decoration-color: #E3A5B4;
@@ -482,4 +488,38 @@ input[type="submit"]:hover {
 .signature img {
     width: 65% !important;
     margin: 0 auto !important;
+}
+
+/*----------json----------*/
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 7rem;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #EFEDE5 !important;
+    cursor: pointer;
+}
+
+.article .text {
+    padding: 1.5rem;
+}
+
+.article .text h3,
+.article .text p {
+    margin: 0 !important;
+}
+
+.article .bottom {
+    padding: 3rem !important;
+    text-align: center;
+}
+
+.article .bottom a {
+    padding: 2rem 5rem !important;
 }
