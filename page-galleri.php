@@ -26,7 +26,20 @@ get_header();
 	}
 
 	?>
-
+    <template>
+        <article class="article">
+            <div class="top">
+                <img class="image">
+                <div class="text">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="bottom">
+                <a class="button-dark">LÆS MERE</a>
+            </div>
+        </article>
+    </template>
 </main><!-- #site-content -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
