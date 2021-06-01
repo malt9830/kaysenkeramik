@@ -18,12 +18,14 @@ get_header();
         <div class="container-single">
             <div class="single-image">
                 <div class="single-image-main">
-                    <img class="single-image1">
+                    <div class="single-image-container">
+                        <img class="single-image1">
+                    </div>
                 </div>
                 <div class="single-image-other">
-                    <img class="single-image2">
-                    <img class="single-image3">
-                    <img class="single-image4">
+                    <div class="single-image-container"><img class="single-image2"></div>
+                    <div class="single-image-container"><img class="single-image3"></div>
+                    <div class="single-image-container"><img class="single-image4"></div>
                 </div>
             </div>
             <div class="single-text">

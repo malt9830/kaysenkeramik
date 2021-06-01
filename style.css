@@ -640,9 +640,22 @@ input[type="submit"]:hover {
     max-width: 90rem;
 }
 
-.single-image-main {
+.single-image-container {
+    position: relative;
     width: 100%;
     padding-top: 100%;
+}
+
+.single-image-container img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 .single-image-other {
@@ -654,7 +667,6 @@ input[type="submit"]:hover {
 
 .single-image-other img {
     cursor: pointer;
-
 }
 
 .image_fade {
