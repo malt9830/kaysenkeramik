@@ -41,12 +41,15 @@ get_header();
         <div class="pink-divider"></div>
     </section>
     <section>
-
+        <h2>Relaterede krus</h2>
+        <div class="container"></div>
     </section>
 
 </main><!-- #site-content -->
 <script>
+    //Her defineres variable til senere i brug ifm. fetch af data
     let singlekeramik;
+    let keramiktype;
     let keramiktyper;
     let aktuelkeramik = <?php echo get_the_ID() ?>;
     const url = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype/" + aktuelkeramik;
