@@ -13,38 +13,54 @@ get_header();
 ?>
 <main id="site-content" role="main">
 
-    <section class="container-single">
-        <div class="single-image">
-            <div class="single-image-main">
-                <img>
+
+    <section class="single-page">
+        <div class="container-single">
+            <div class="single-image">
+                <div class="single-image-main">
+                    <img class="single-image1">
+                </div>
+                <div class="single-image-other">
+                    <img class="single-image2">
+                    <img class="single-image3">
+                    <img class="single-image4">
+                </div>
             </div>
-            <div class="single-image-other">
-                <img class="single-image2">
-                <img class="single-image3">
-                <img class="single-image4">
-            </div>
-        </div>
-        <div class="single-text">
-            <h2 class="single-text-title"></h2>
-            <p class="single-text-desc"></p>
-            <p class="single-text-material"></p>
-            <p class="single-text-content"></p>
-            <p class="single-text-height"></p>
-            <p class="single-text-diameter"></p>
-            <div class="cup-sizes">
-                <img class="model1" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model1-3.svg" alt="keramik krus ikon af model 1">
-                <img class="model2" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model2.svg" alt="keramik krus ikon af model 2">
-                <img class="model3" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model3.svg" alt="keramik krus ikon af model 3">
-                <img class="model4" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model4.svg" alt="keramik krus ikon af model 4">
+            <div class="single-text">
+                <h2 class="single-text-title"></h2>
+                <p class="single-text-desc"></p>
+                <p class="single-text-material"></p>
+                <p class="single-text-content"></p>
+                <p class="single-text-height"></p>
+                <p class="single-text-diameter"></p>
+                <div class="cup-sizes">
+                    <img class="model1" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model1-3.svg" alt="keramik krus ikon af model 1">
+                    <img class="model2" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model2.svg" alt="keramik krus ikon af model 2">
+                    <img class="model3" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model3.svg" alt="keramik krus ikon af model 3">
+                    <img class="model4" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model4.svg" alt="keramik krus ikon af model 4">
+                </div>
             </div>
         </div>
         <div class="pink-divider"></div>
+        <div class="container-other">
+            <h2>Relaterede krus</h2>
+            <div class="container"></div>
+        </div>
     </section>
-    <section>
-        <h2>Relaterede krus</h2>
-        <div class="container"></div>
-    </section>
-
+    <template>
+        <article class="article">
+            <div class="top">
+                <img class="image">
+                <div class="text">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="bottom">
+                <a class="button-dark">LÆS MERE</a>
+            </div>
+        </article>
+    </template>
 </main><!-- #site-content -->
 <script>
     //Her defineres variable til senere i brug ifm. fetch af data
@@ -52,7 +68,12 @@ get_header();
     let keramiktype;
     let keramiktyper;
     let aktuelkeramik = <?php echo get_the_ID() ?>;
+
+    //Definerer en variabel til at tælle hvor mange gange loopet er kørt
+    let counter = 0;
+
     const url = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype/" + aktuelkeramik;
+    const urlOther = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype?per_page=100"
 
     document.addEventListener("DOMContentLoaded", () => {
         console.log("DOMContentLoaded");
@@ -64,13 +85,17 @@ get_header();
         const data = await fetch(url);
         singlekeramik = await data.json();
 
+        const dataOther = await fetch(urlOther);
+        otherkeramik = await dataOther.json();
+
         showSingle();
+        showOther();
     }
 
     function showSingle() {
-        console.log(singlekeramik);
+        console.log("showingSingle", singlekeramik);
 
-        document.querySelector(".single-image-main img").src = singlekeramik.billede.guid;
+        document.querySelector(".single-image1").src = singlekeramik.billede.guid;
 
         document.querySelector(".single-text-title").textContent = singlekeramik.navn;
         document.querySelector(".single-text-desc").textContent = singlekeramik.lang;
@@ -106,7 +131,7 @@ get_header();
             document.querySelector(".single-text-height").textContent = `Højde: ${singlekeramik.height}`;
         }
 
-        //Vis bredde for artmoney og diameter for andet
+        //Vis bredde for Artmoney og diameter for andet
         if (singlekeramik.ktype == "Artmoney") {
             document.querySelector(".single-text-diameter").textContent = `Bredde: ${singlekeramik.diameter}`;
         } else {
@@ -118,6 +143,7 @@ get_header();
             document.querySelector(".single-image2").setAttribute("display", "none");
         } else {
             document.querySelector(".single-image2").src = singlekeramik.billede2.guid;
+            document.querySelector(".single-image2").addEventListener("click", replaceImage);
         }
 
         //Viser kun billede 3 hvis objektet har et
@@ -125,6 +151,7 @@ get_header();
             document.querySelector(".single-image3").setAttribute("display", "none");
         } else {
             document.querySelector(".single-image3").src = singlekeramik.billede3.guid;
+            document.querySelector(".single-image3").addEventListener("click", replaceImage);
         }
 
         //Viser kun billede 4 hvis objektet har et
@@ -132,8 +159,64 @@ get_header();
             document.querySelector(".single-image4").setAttribute("display", "none");
         } else {
             document.querySelector(".single-image4").src = singlekeramik.billede4.guid;
+            document.querySelector(".single-image4").addEventListener("click", replaceImage);
         }
+    }
 
+    function replaceImage() {
+        console.log(`replacing primary image with image${this.src}`);
+
+        //Gemmer billedernes source så de kan anvendes til at udbytte deres source
+        let newImageSrc = this.src;
+        let oldImageSrc = document.querySelector(".single-image1").src;
+
+        //Bytter det primære billedes source med den fra det klikkede billede
+        document.querySelector(".single-image1").src = newImageSrc;
+        this.src = oldImageSrc;
+
+        //Fjerner animationerne fra alle billederne og bruger offsetHeight til at muliggøre fjernelse og tilføjelse af klasser i samme funktion
+        document.querySelectorAll(".single-image img").forEach(image => {
+            image.classList.remove("image_fade");
+            image.offsetHeight;
+        })
+
+        //Tilføjer animationerne til de to byttede billeder
+        document.querySelector(".single-image1").classList.add("image_fade");
+        this.classList.add("image_fade");
+    }
+
+    function showOther() {
+        console.log("showingOther", otherkeramik);
+
+        //Her defineres konstanter til brug i kloningen af template
+        const template = document.querySelector("template");
+        const container = document.querySelector(".container");
+
+
+        //Loopet for kloningen af json-dataen
+        otherkeramik.forEach(keramiktype => {
+            console.log("looping");
+
+            //Tilføjer én counter og tjekker om loopet skal fortsættes eller stoppes, således kun 3 kloner indsættes i DOM
+            counter++;
+            console.log(counter);
+
+            if (counter <= 3) {
+                //Her defineres, klones og udfyldes templaten med json-data
+                let clone = template.cloneNode(true).content;
+
+                clone.querySelector("img").src = keramiktype.billede.guid;
+                clone.querySelector("img").alt = keramiktype.kort;
+                clone.querySelector("h3").textContent = keramiktype.navn;
+                clone.querySelector("p").textContent = keramiktype.kort;
+                clone.querySelector("article").addEventListener("click", () => {
+                    location.href = keramiktype.link;
+                });
+
+                //Her indsættes den klonen i DOM
+                container.appendChild(clone);
+            }
+        })
     }
 
 </script>

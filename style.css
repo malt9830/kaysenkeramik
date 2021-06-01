@@ -297,10 +297,10 @@ body:not(.overlay-header) .primary-menu > li > a,
 .primary-menu > li > a:hover {
     color: #E3A5B4 !important;
     font-size: 1.5rem !important;
-text-decoration: none;
+    text-decoration: none;
 }
 
-.primary-menu li.current-menu-item > a{
+.primary-menu li.current-menu-item > a {
     font-weight: 600;
 }
 
@@ -557,7 +557,7 @@ input[type="submit"]:hover {
     max-width: 90% !important;
     margin: 0 !important;
     z-index: 2;
-    min-width: 110px; 
+    min-width: 110px;
 }
 
 .clay-text-centre h3 {
@@ -624,7 +624,7 @@ input[type="submit"]:hover {
 }
 
 .article .bottom {
-    padding: 3rem !important;
+    padding: 5rem 3rem !important;
     text-align: center;
 }
 
@@ -632,11 +632,17 @@ input[type="submit"]:hover {
     padding: 2rem 5rem !important;
 }
 
-/*----------json----------*/
+/*----------single----------*/
 
-.container-single {
+.single-page {
     margin: 0 auto;
     width: calc(100% - 4rem);
+    max-width: 90rem;
+}
+
+.single-image-main {
+    width: 100%;
+    padding-top: 100%;
 }
 
 .single-image-other {
@@ -644,6 +650,28 @@ input[type="submit"]:hover {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
     margin-top: 1rem;
+}
+
+.single-image-other img {
+    cursor: pointer;
+
+}
+
+.image_fade {
+    animation-name: image_fade;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+@keyframes image_fade {
+    0% {
+        opacity: 50%;
+    }
+
+    100% {
+        opacity: 100%
+    }
 }
 
 .cup-sizes {}
