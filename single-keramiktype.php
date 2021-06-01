@@ -38,8 +38,11 @@ get_header();
                 <img class="model4" src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/model4.svg" alt="keramik krus ikon af model 4">
             </div>
         </div>
+        <div class="pink-divider"></div>
     </section>
+    <section>
 
+    </section>
 
 </main><!-- #site-content -->
 <script>

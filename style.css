@@ -88,7 +88,7 @@ img {
     .long-text p {
         margin-left: 0 !important;
         margin-right: 0 !important;
-        width: 60% !important;
+        width: 100% !important;
     }
 }
 
@@ -361,7 +361,7 @@ footer,
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 25rem;
+    width: 55rem;
 }
 
 .landing-splash-text .button-light {
@@ -387,6 +387,10 @@ footer,
 .landing-splash-text a:hover {
     background: #9F9A89;
     color: #F7F6F2;
+}
+
+.landing-splash-text a div {
+    margin: 0 auto;
 }
 
 .landing-splash-image {
@@ -582,8 +586,8 @@ input[type="submit"]:hover {
 
 /*----------about----------*/
 
-.signature img {
-    width: 20% !important;
+.signature {
+    width: 40% !important;
     margin: 0 auto !important;
 }
 
