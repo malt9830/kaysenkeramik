@@ -285,21 +285,23 @@ button.close-nav-toggle img:first-child {
 body:not(.overlay-header) .primary-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
     font-family: 'Montserrat', sans-serif !important;
-    color: #2E2E2E !important;
+    /* color: #2E2E2E !important; */
 }
 
-.primary-menu li.current-menu-item > a,
-.primary-menu a {
+.primary-menu > li > a {
+    color: #2e2e2e !important;
     font-size: 1.5rem !important;
-    text-underline-offset: 0.5rem;
 }
 
 .primary-menu li.current-menu-item > a,
-.primary-menu a:hover {
-    text-decoration: underline;
-    text-decoration-color: #E3A5B4;
-    text-decoration-thickness: 3px;
-    transition: none !important;
+.primary-menu > li > a:hover {
+    color: #E3A5B4 !important;
+    font-size: 1.5rem !important;
+text-decoration: none;
+}
+
+.primary-menu li.current-menu-item > a{
+    font-weight: 600;
 }
 
 /*----------footer----------*/
@@ -555,6 +557,7 @@ input[type="submit"]:hover {
     max-width: 90% !important;
     margin: 0 !important;
     z-index: 2;
+    min-width: 110px; 
 }
 
 .clay-text-centre h3 {
