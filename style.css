@@ -157,7 +157,7 @@ li {
 }
 
 .site-title a {
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Archivo Narrow', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
@@ -336,7 +336,7 @@ footer,
 }
 
 .footer-logo {
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Archivo Narrow', sans-serif;
     font-weight: 400;
     font-size: 4rem;
     color: white;
@@ -405,7 +405,7 @@ footer,
 }
 
 .text-logo {
-    font-family: 'Archivo', sans-serif !important;
+    font-family: 'Archivo Narrow', sans-serif !important;
     font-weight: 400 !important;
     text-transform: uppercase !important;
     text-align: center !important;
