@@ -69,9 +69,17 @@ get_header();
         document.querySelector(".single-text-title").textContent = singlekeramik.navn;
         document.querySelector(".single-text-desc").textContent = singlekeramik.lang;
 
-        //Fjern krus-størrelsesikonerne fra andet end krus
-        if (singlekeramik.ktype != "Krus") {
-            console.log("ikke et krus")
+        //Markér den givne krus-størrelse for objektet eller skjul krusene hvis objektet ikke er et krus
+        if (singlekeramik.model == 1) {
+            document.querySelector(".model1").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-287.svg"
+        } else if (singlekeramik.model == 2) {
+            document.querySelector(".model2").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-250.svg"
+        } else if (singlekeramik.model == 3) {
+            document.querySelector(".model3").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-303.svg"
+        } else if (singlekeramik.model == 4) {
+            document.querySelector(".model4").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-259.svg"
+        } else {
+            console.log("Skjul krus-modeller")
             document.querySelector(".cup-sizes").classList.add("none");
         }
 
