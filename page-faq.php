@@ -48,9 +48,9 @@ get_header();
 
         //Ændrer plus til minus eller omvendt afhængigt af boolen
         if (content.classList.contains("faq-expanded")) {
-            icon.setAttribute("src", "http://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/Group-85-1.svg")
+            icon.setAttribute("src", "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/Group-85-1.svg")
         } else {
-            icon.setAttribute("src", "http://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/Group-186.svg");
+            icon.setAttribute("src", "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/Group-186.svg");
         }
 
         //Toggler klassen på indholdet, der skjuler og viser den

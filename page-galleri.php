@@ -53,7 +53,7 @@ get_header();
     let keramiktyper;
 
     //Her defineres konstanten med url'et, hvorfra json hentes
-    const url = "http://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype?per_page=100"
+    const url = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype?per_page=100"
 
     //Her indhentes json fra rest API og sendes videre til funktionen showkeramiktyper
     async function loadJSON() {
