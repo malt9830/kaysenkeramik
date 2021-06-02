@@ -19,10 +19,11 @@ get_header();
             <div class="single-image">
                 <div class="single-image-main">
                     <div class="single-image-container">
-                        <img class="single-image1">
+                        <img class="single-image-primary">
                     </div>
                 </div>
                 <div class="single-image-other">
+                    <div class="single-image-container"><img class="single-image1"></div>
                     <div class="single-image-container"><img class="single-image2"></div>
                     <div class="single-image-container"><img class="single-image3"></div>
                     <div class="single-image-container"><img class="single-image4"></div>
@@ -97,7 +98,7 @@ get_header();
     function showSingle() {
         console.log("showingSingle", singlekeramik);
 
-        document.querySelector(".single-image1").src = singlekeramik.billede.guid;
+        document.querySelector(".single-image-primary").src = singlekeramik.billede.guid;
 
         document.querySelector(".single-text-title").textContent = singlekeramik.navn;
         document.querySelector(".single-text-desc").textContent = singlekeramik.lang;
@@ -121,7 +122,7 @@ get_header();
 
         //Viser kun indhold, hvis det er et objekt med fyld
         if (singlekeramik.deciliter == "") {
-            document.querySelector(".single-text-content").setAttribute("display", "none")
+            document.querySelector(".single-text-content").style.display = "none";
         } else {
             document.querySelector(".single-text-content").textContent = `Kan indholde: ${singlekeramik.deciliter}`;
         }
@@ -140,9 +141,13 @@ get_header();
             document.querySelector(".single-text-diameter").textContent = `Diameter: ${singlekeramik.diameter}`;
         }
 
+        //Viser billede 1
+        document.querySelector(".single-image1").src = singlekeramik.billede.guid;
+        document.querySelector(".single-image1").addEventListener("click", replaceImage);
+
         //Viser kun billede 2 hvis objektet har et
         if (singlekeramik.billede2 == false) {
-            document.querySelector(".single-image2").setAttribute("display", "none");
+            document.querySelector(".single-image2").style.display = "none";
         } else {
             document.querySelector(".single-image2").src = singlekeramik.billede2.guid;
             document.querySelector(".single-image2").addEventListener("click", replaceImage);
@@ -150,7 +155,7 @@ get_header();
 
         //Viser kun billede 3 hvis objektet har et
         if (singlekeramik.billede3 == false) {
-            document.querySelector(".single-image3").setAttribute("display", "none");
+            document.querySelector(".single-image3").style.display = "none";
         } else {
             document.querySelector(".single-image3").src = singlekeramik.billede3.guid;
             document.querySelector(".single-image3").addEventListener("click", replaceImage);
@@ -158,7 +163,7 @@ get_header();
 
         //Viser kun billede 4 hvis objektet har et
         if (singlekeramik.billede4 == false) {
-            document.querySelector(".single-image4").setAttribute("display", "none");
+            document.querySelector(".single-image4").style.display = "none";
         } else {
             document.querySelector(".single-image4").src = singlekeramik.billede4.guid;
             document.querySelector(".single-image4").addEventListener("click", replaceImage);
@@ -170,21 +175,21 @@ get_header();
 
         //Gemmer billedernes source så de kan anvendes til at udbytte deres source
         let newImageSrc = this.src;
-        let oldImageSrc = document.querySelector(".single-image1").src;
+        /*
+                let oldImageSrc = document.querySelector(".single-image1").src;*/
 
         //Bytter det primære billedes source med den fra det klikkede billede
-        document.querySelector(".single-image1").src = newImageSrc;
-        this.src = oldImageSrc;
-
+        document.querySelector(".single-image-primary").src = newImageSrc;
+        /*    this.src = oldImageSrc;*/
         //Fjerner animationerne fra alle billederne og bruger offsetHeight til at muliggøre fjernelse og tilføjelse af klasser i samme funktion
-        document.querySelectorAll(".single-image img").forEach(image => {
-            image.classList.remove("image_fade");
-            image.offsetHeight;
-        })
+        /* document.querySelectorAll(".single-image img").forEach(image => {
+ image.classList.remove("image_fade");
+ image.offsetHeight;
+ })*/
 
         //Tilføjer animationerne til de to byttede billeder
-        document.querySelector(".single-image1").classList.add("image_fade");
-        this.classList.add("image_fade");
+        /*document.querySelector(".single-image1").classList.add("image_fade");
+this.classList.add("image_fade");*/
     }
 
     function showOther() {
