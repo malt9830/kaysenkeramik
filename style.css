@@ -623,6 +623,10 @@ input[type="submit"]:hover {
     padding: 1.5rem;
 }
 
+.article .text h3 {
+    font-size: 2rem !important;
+}
+
 .article .text h3,
 .article .text p {
     margin: 0 !important;
@@ -632,10 +636,6 @@ input[type="submit"]:hover {
 .article .bottom {
     padding: 5rem 3rem !important;
     text-align: center;
-}
-
-.article .bottom a {
-    padding: 2rem 5rem !important;
 }
 
 .container-gallery {
@@ -648,7 +648,6 @@ input[type="submit"]:hover {
     width: 100%;
 }
 
-
 .container-gallery .bottom {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -657,8 +656,8 @@ input[type="submit"]:hover {
 }
 
 .container-gallery .bottom a {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding: 1rem !important;
+    font-size: 1.3rem !important;
 }
 
 @media(min-width:950px) {
@@ -673,6 +672,7 @@ input[type="submit"]:hover {
         width: 100%;
         margin: 0;
     }
+
 }
 
 /*----------single----------*/
@@ -769,7 +769,7 @@ input[type="submit"]:hover {
     margin: 0;
     padding: 1rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none;
 }
 
@@ -795,4 +795,48 @@ input[type="submit"]:hover {
     .filter-clay-container {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+.filter-type-items .filter-type {
+    background: #F7F6F2;
+    font-family: 'Raleway', sans-serif;
+    color: #B9B39B;
+    border: 1px solid #9F9A89;
+    text-decoration: none;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+}
+
+.filter-type-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #F7F6F2;
+    color: #B9B39B;
+    border: 1px solid #9F9A89;
+    text-decoration: none;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.filter-type-dropdown .filter-type {
+    background: #F7F6F2;
+    font-family: 'Raleway', sans-serif;
+    color: #B9B39B;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 0;
 }
