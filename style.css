@@ -603,8 +603,6 @@ input[type="submit"]:hover {
     margin-bottom: 7rem;
 }
 
-
-
 .article {
     display: inline-flex;
     flex-direction: column;
@@ -622,6 +620,7 @@ input[type="submit"]:hover {
 .article .text h3,
 .article .text p {
     margin: 0 !important;
+    white-space: normal;
 }
 
 .article .bottom {
@@ -642,6 +641,7 @@ input[type="submit"]:hover {
 .container-gallery .article {
     width: 100%;
 }
+
 
 .container-gallery .bottom {
     padding-left: 0 !important;
