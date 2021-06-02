@@ -300,6 +300,16 @@ body:not(.overlay-header) .primary-menu > li > a,
     font-weight: 600;
 }
 
+.mobile-menu a{
+    color:#2e2e2e !important;
+    font-weight:200 !important;
+    font-size: 1.85rem !important;
+}
+
+.mobile-menu li {
+  border:none;
+}
+
 /*----------footer----------*/
 
 footer,
