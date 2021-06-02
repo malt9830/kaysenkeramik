@@ -46,7 +46,7 @@ get_header();
         </div>
         <div class="pink-divider"></div>
         <div class="container-other">
-            <h2>Relaterede krus</h2>
+            <h2>Måske kan du lide</h2>
             <div class="container"></div>
         </div>
     </section>

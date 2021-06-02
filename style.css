@@ -113,7 +113,7 @@ img {
 
 h1 {
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 4rem !important;
+    font-size: 3rem !important;
     font-weight: 400 !important;
     color: #2E2E2E;
 }
@@ -380,7 +380,7 @@ footer,
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 75rem;
+    width: 30rem;
 }
 
 .landing-splash-text .button-light {
@@ -390,6 +390,10 @@ footer,
 .landing-splash-text .button-light:hover {
     background: #9F9A89;
     color: #F7F6F2;
+}
+
+.landing-splash-text h1 {
+    margin: 3rem auto !important;
 }
 
 .landing-splash-text a {
@@ -412,15 +416,20 @@ footer,
     margin: 0 auto;
 }
 
-.landing-splash-image {
-    object-fit: cover;
+.splashvideo {
     height: 60vh;
     width: 100%;
+}
+
+.splashvideo video {
+    height: 100% !important;
+    object-fit: cover;
 }
 
 .text-logo {
     font-family: 'Archivo Narrow', sans-serif !important;
     font-weight: 400 !important;
+    font-size: 3.5rem !important;
     text-transform: uppercase !important;
     text-align: center !important;
     color: #F7F6F2 !important;
@@ -613,6 +622,7 @@ input[type="submit"]:hover {
 
 /*----------json----------*/
 .container {
+    display: flex;
     overflow: auto;
     white-space: nowrap;
     grid-gap: 1.5rem;
