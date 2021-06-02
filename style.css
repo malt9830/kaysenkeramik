@@ -8,8 +8,6 @@ Author:			Gruppe 03
 
 /*----------general----------*/
 
-/* Hello my fwnds */
-
 body,
 .singular .entry-header,
 .menu-modal-inner {
@@ -354,6 +352,10 @@ footer,
 .footer-credits > *,
 .to-the-top {
     color: white !important;
+}
+
+.footer-widgets-wrapper {
+margin-left: 0;
 }
 
 /*----------landing----------*/
