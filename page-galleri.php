@@ -45,23 +45,37 @@ get_header();
     document.addEventListener("DOMContentLoaded", () => {
         console.log("DOMContentLoaded");
 
+
+        //Tilføj event listeners til filterfunktionerne
         document.querySelectorAll(".filter-clay").forEach(clayFilter => {
             clayFilter.addEventListener("click", filterClay)
         })
 
+        document.querySelectorAll(".filter-type-items .filter-type").forEach(typeFilter => {
+            typeFilter.addEventListener("click", filterType);
+        })
+
+        document.querySelector(".filter-type-dropdown").addEventListener("click", expandDropdown);
+
+        //Load json
         loadJSON();
     })
+
 
     //Her defineres variable til senere i brug ifm. fetch af data
     let keramiktype;
     let keramiktyper;
 
     //Her defineres variable til filtre til senere brug
+    let typeFilter = "Alle";
     let clayFilterAll = true;
     let clayFilterLight = "";
     let clayFilterDark = "";
     let clayFilterPorcelain = "";
     let clayFilterRecycle = "";
+
+    //Her defineres konstant til bruge af dropdown-funktionen
+    const dropdown = document.querySelector(".filter-type-items");
 
     //Her defineres konstanten med url'et, hvorfra json hentes
     const url = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-json/wp/v2/keramiktype?per_page=100"
@@ -73,11 +87,21 @@ get_header();
         showKeramiktyper();
     }
 
+    function expandDropdown() {
+        console.log("expandDropdown");
+
+        if (dropdown.style.display == "block") {
+            dropdown.style.display = "none"
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+
     function filterClay() {
         console.log(this.dataset.materiale);
 
 
-        if (this.dataset.materiale == "Lys stentøjsler" && this.classList.contains("filter-clay-active")) {
+        if (this.dataset.materiale == "Lys stentøjsler" && this.classList.contains("filter-active")) {
             console.log("lightFilterOff");
             clayFilterLight = "";
         } else if (this.dataset.materiale == "Lys stentøjsler") {
@@ -85,7 +109,7 @@ get_header();
             clayFilterLight = this.dataset.materiale;
         }
 
-        if (this.dataset.materiale == "Mørk stentøjsler" && this.classList.contains("filter-clay-active")) {
+        if (this.dataset.materiale == "Mørk stentøjsler" && this.classList.contains("filter-active")) {
             console.log("darkFilterOff");
             clayFilterDark = "";
         } else if (this.dataset.materiale == "Mørk stentøjsler") {
@@ -93,7 +117,7 @@ get_header();
             clayFilterDark = this.dataset.materiale;
         }
 
-        if (this.dataset.materiale == "Porcelænsler" && this.classList.contains("filter-clay-active")) {
+        if (this.dataset.materiale == "Porcelænsler" && this.classList.contains("filter-active")) {
             console.log("porcelainFilterOn");
             clayFilterPorcelain = "";
         } else if (this.dataset.materiale == "Porcelænsler") {
@@ -101,7 +125,7 @@ get_header();
             clayFilterPorcelain = this.dataset.materiale;
         }
 
-        if (this.dataset.materiale == "Genbrugsler" && this.classList.contains("filter-clay-active")) {
+        if (this.dataset.materiale == "Genbrugsler" && this.classList.contains("filter-active")) {
             console.log("recycleFilterOn");
             clayFilterRecycle = "";
         } else if (this.dataset.materiale == "Genbrugsler") {
@@ -109,7 +133,7 @@ get_header();
             clayFilterRecycle = this.dataset.materiale;
         }
 
-        this.classList.toggle("filter-clay-active");
+        this.classList.toggle("filter-active");
 
         if (clayFilterLight == "" && clayFilterDark == "" && clayFilterPorcelain == "" && clayFilterRecycle == "") {
             clayFilterAll = true;
@@ -120,10 +144,25 @@ get_header();
         showKeramiktyper();
     }
 
+    function filterType() {
+        console.log(this.dataset.ktype);
+
+        //Sætter det nye filters navn op på dropdown menu
+        document.querySelector(".filter-type-dropdown .filter-type").textContent = this.dataset.ktype;
+
+        //Sætter det nye filter lige kategoritypen
+        typeFilter = this.dataset.ktype;
+
+        //Skjuler dropdown-menuen igen
+        dropdown.style.display = "none";
+
+        //Starter funktionerne til at fremvise dataet
+        showKeramiktyper();
+    }
+
     function showKeramiktyper() {
-        console.log(`clayFilterLight: ${clayFilterLight}`);
-        console.log(`clayFilterDark: ${clayFilterDark}`);
-        console.log(`ClayFilterAll: ${clayFilterAll}`);
+        console.log(`clayFilterAll: ${clayFilterAll}`);
+        console.log(keramiktyper);
 
         //Her defineres konstanter til brug i kloningen af template
         const template = document.querySelector("template");
@@ -134,21 +173,24 @@ get_header();
         //Loopet for kloningen af json-dataen
         keramiktyper.forEach(keramiktype => {
             if (clayFilterAll == true || clayFilterLight == keramiktype.materiale || clayFilterDark == keramiktype.materiale || clayFilterPorcelain == keramiktype.materiale || clayFilterRecycle == keramiktype.materiale) {
-                console.log("looping");
 
-                //Her defineres, klones og udfyldes templaten med json-data
-                let clone = template.cloneNode(true).content;
+                if (typeFilter == "Alle" || typeFilter == keramiktype.ktype) {
+                    console.log("looping");
 
-                clone.querySelector("img").src = keramiktype.billede.guid;
-                clone.querySelector("img").alt = keramiktype.kort;
-                clone.querySelector("h3").textContent = keramiktype.navn;
-                clone.querySelector("p").textContent = keramiktype.kort;
-                clone.querySelector("article").addEventListener("click", () => {
-                    location.href = keramiktype.link;
-                });
+                    //Her defineres, klones og udfyldes templaten med json-data
+                    let clone = template.cloneNode(true).content;
 
-                //Her indsættes den klonen i DOM
-                container.appendChild(clone);
+                    clone.querySelector("img").src = keramiktype.billede.guid;
+                    clone.querySelector("img").alt = keramiktype.kort;
+                    clone.querySelector("h3").textContent = keramiktype.navn;
+                    clone.querySelector("p").textContent = keramiktype.kort;
+                    clone.querySelector("article").addEventListener("click", () => {
+                        location.href = keramiktype.link;
+                    });
+
+                    //Her indsættes den klonen i DOM
+                    container.appendChild(clone);
+                }
             }
         })
     }
