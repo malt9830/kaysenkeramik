@@ -100,7 +100,6 @@ get_header();
     function filterClay() {
         console.log(this.dataset.materiale);
 
-
         if (this.dataset.materiale == "Lys stentøjsler" && this.classList.contains("filter-active")) {
             console.log("lightFilterOff");
             clayFilterLight = "";
