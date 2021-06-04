@@ -55,7 +55,7 @@ get_header();
 
         //Toggler klassen på indholdet, der skjuler og viser den
         content.classList.toggle("faq-expanded");
-        content.offsetHeight;
+
     }
 
 </script>
