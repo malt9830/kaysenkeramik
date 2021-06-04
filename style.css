@@ -497,6 +497,17 @@ footer,
     animation-fill-mode: both;
 }
 
+@keyframes faq-expand {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+
 .model-header div:first-child {
     display: flex;
     grid-gap: 2rem;
@@ -516,17 +527,6 @@ footer,
         margin-left: 0 !important;
         margin-right: 0 !important;
         width: 60% !important;
-    }
-}
-
-@keyframes faq-expand {
-    0% {
-        opacity: 0%;
-    }
-
-    100% {
-        opacity: 100%;
-        transform: translateY(0%);
     }
 }
 
