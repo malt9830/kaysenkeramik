@@ -46,7 +46,7 @@ get_header();
         let content = this.parentElement.lastElementChild;
         let icon = this.firstElementChild.lastElementChild;
 
-        //Ændrer plus til minus eller omvendt afhængigt af boolen
+        //Ændrer plus til minus
         if (content.classList.contains("faq-expanded")) {
             icon.setAttribute("src", "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/05/Group-85-1.svg")
         } else {
