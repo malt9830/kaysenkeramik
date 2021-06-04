@@ -731,6 +731,11 @@ input[type="submit"]:hover {
         margin: 0;
     }
 
+    .container-gallery .bottom a {
+        padding: 2rem !important;
+        font-size: 2rem !important;
+    }
+
 }
 
 /*----------single----------*/
