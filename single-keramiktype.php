@@ -23,10 +23,10 @@ get_header();
                     </div>
                 </div>
                 <div class="single-image-other">
-                    <div class="single-image-container"><img class="single-image1"></div>
-                    <div class="single-image-container"><img class="single-image2"></div>
-                    <div class="single-image-container"><img class="single-image3"></div>
-                    <div class="single-image-container"><img class="single-image4"></div>
+                    <div class="single-image-container"><img class="single-image1" alt="et af kaysen keramiks keramikprodukter"></div>
+                    <div class="single-image-container"><img class="single-image2" alt="et af kaysen keramiks keramikprodukter"></div>
+                    <div class="single-image-container"><img class="single-image3" alt="et af kaysen keramiks keramikprodukter"></div>
+                    <div class="single-image-container"><img class="single-image4" alt="et af kaysen keramiks keramikprodukter"></div>
                 </div>
             </div>
             <div class="single-text">
