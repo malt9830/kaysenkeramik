@@ -106,13 +106,14 @@ get_header();
         console.log("showingSingle", singlekeramik);
 
         document.querySelector(".single-image-primary").src = singlekeramik.billede.guid;
+        document.querySelector(".single-image-primary").alt = singlekeramik.kort;
 
         document.querySelector(".single-text-title").textContent = singlekeramik.navn;
         document.querySelector(".single-text-desc").textContent = singlekeramik.lang;
 
         //Vis eller gem krus-størrelser
         if (singlekeramik.model == 1) {
-            document.querySelector(".model1").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-287.svg"
+            document.querySelector(".model1").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-287.svg";
         } else if (singlekeramik.model == 2) {
             document.querySelector(".model2").src = "https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-250.svg"
         } else if (singlekeramik.model == 3) {
@@ -157,6 +158,7 @@ get_header();
 
         //Viser billede 1
         document.querySelector(".single-image1").src = singlekeramik.billede.guid;
+        document.querySelector(".single-image1").alt = singlekeramik.kort;
         document.querySelector(".single-image1").addEventListener("click", replaceImage);
 
         //Viser kun billede 2 hvis objektet har et
@@ -164,6 +166,7 @@ get_header();
             document.querySelector(".single-image2").parentElement.style.display = "none";
         } else {
             document.querySelector(".single-image2").src = singlekeramik.billede2.guid;
+            document.querySelector(".single-image2").alt = singlekeramik.kort;
             document.querySelector(".single-image2").addEventListener("click", replaceImage);
         }
 
@@ -172,6 +175,7 @@ get_header();
             document.querySelector(".single-image3").parentElement.style.display = "none";
         } else {
             document.querySelector(".single-image3").src = singlekeramik.billede3.guid;
+            document.querySelector(".single-image3").alt = singlekeramik.kort;
             document.querySelector(".single-image3").addEventListener("click", replaceImage);
         }
 
@@ -180,6 +184,7 @@ get_header();
             document.querySelector(".single-image4").parentElement.style.display = "none";
         } else {
             document.querySelector(".single-image4").src = singlekeramik.billede4.guid;
+            document.querySelector(".single-image4").alt = singlekeramik.kort;
             document.querySelector(".single-image4").addEventListener("click", replaceImage);
         }
     }
@@ -220,6 +225,7 @@ get_header();
                     clone.querySelector("img").alt = keramiktype.kort;
                     clone.querySelector("h3").textContent = keramiktype.navn;
                     clone.querySelector("p").textContent = keramiktype.kort;
+                    clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
                     clone.querySelector("article").addEventListener("click", () => {
                         location.href = keramiktype.link;
                     });
