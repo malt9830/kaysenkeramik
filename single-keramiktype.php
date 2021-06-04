@@ -135,17 +135,12 @@ get_header();
             document.querySelector(".single-text-content").textContent = `Kan indholde: ${singlekeramik.deciliter}`;
         }
 
-        //Vis længde for artmoney og højde for andet
+        //Vis længde/bredde for artmoney og højde/diameter for andet
         if (singlekeramik.ktype == "Artmoney") {
             document.querySelector(".single-text-height").textContent = `Længde: ${singlekeramik.height}`;
-        } else {
-            document.querySelector(".single-text-height").textContent = `Højde: ${singlekeramik.height}`;
-        }
-
-        //Vis bredde for Artmoney og diameter for andet
-        if (singlekeramik.ktype == "Artmoney") {
             document.querySelector(".single-text-diameter").textContent = `Bredde: ${singlekeramik.diameter}`;
         } else {
+            document.querySelector(".single-text-height").textContent = `Højde: ${singlekeramik.height}`;
             document.querySelector(".single-text-diameter").textContent = `Diameter: ${singlekeramik.diameter}`;
         }
 
