@@ -15,7 +15,7 @@ get_header();
 
     <section class="single-page">
         <div class="button-back" onclick="history.back()">
-            <img src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/tilbage.svg" alt="tilbage knap svg">
+            <img src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/tilbage.svg" alt="tilbage knap svg" width="36.13" height="25">
             <p>Tilbage</p>
         </div>
         <div class="container-single">
@@ -110,6 +110,8 @@ get_header();
 
         document.querySelector(".single-image-primary").src = singlekeramik.billede.guid;
         document.querySelector(".single-image-primary").alt = singlekeramik.kort;
+        document.querySelector(".single-image-primary").width = "207";
+        document.querySelector(".single-image-primary").height = "205";
 
         document.querySelector(".single-text-title").textContent = singlekeramik.navn;
         document.querySelector(".single-text-desc").textContent = singlekeramik.lang;
@@ -157,6 +159,8 @@ get_header();
         //Viser billede 1
         document.querySelector(".single-image1").src = singlekeramik.billede.guid;
         document.querySelector(".single-image1").alt = singlekeramik.kort;
+        document.querySelector(".single-image1").width = "207";
+        document.querySelector(".single-image1").height = "205";
         document.querySelector(".single-image1").addEventListener("click", replaceImage);
 
         //Viser kun billede 2 hvis objektet har et
@@ -165,6 +169,8 @@ get_header();
         } else {
             document.querySelector(".single-image2").src = singlekeramik.billede2.guid;
             document.querySelector(".single-image2").alt = singlekeramik.kort;
+            document.querySelector(".single-image2").width = "207";
+            document.querySelector(".single-image2").height = "205";
             document.querySelector(".single-image2").addEventListener("click", replaceImage);
         }
 
@@ -174,6 +180,8 @@ get_header();
         } else {
             document.querySelector(".single-image3").src = singlekeramik.billede3.guid;
             document.querySelector(".single-image3").alt = singlekeramik.kort;
+            document.querySelector(".single-image3").width = "207";
+            document.querySelector(".single-image3").height = "205";
             document.querySelector(".single-image3").addEventListener("click", replaceImage);
         }
 
@@ -183,6 +191,8 @@ get_header();
         } else {
             document.querySelector(".single-image4").src = singlekeramik.billede4.guid;
             document.querySelector(".single-image4").alt = singlekeramik.kort;
+            document.querySelector(".single-image4").width = "207";
+            document.querySelector(".single-image4").height = "205";
             document.querySelector(".single-image4").addEventListener("click", replaceImage);
         }
     }
@@ -214,13 +224,13 @@ get_header();
                 counter++;
                 console.log(`Counters: ${counter}`);
 
-                //Fortsætter kun hvis færre end 3 viste
-
                 //Her defineres, klones og udfyldes templaten med json-data
                 let clone = template.cloneNode(true).content;
 
                 clone.querySelector("img").src = keramiktype.billede.guid;
                 clone.querySelector("img").alt = keramiktype.kort;
+                clone.querySelector("img").width = "207";
+                clone.querySelector("img").height = "205";
                 clone.querySelector("h3").textContent = keramiktype.navn;
                 clone.querySelector("p").textContent = keramiktype.kort;
                 clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
