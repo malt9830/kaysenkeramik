@@ -273,7 +273,6 @@ h1.entry-title {
 
 .button-back {
     display: flex;
-    grid-gap: 1rem;
     align-items: center;
     color: #000;
     font-size: 1.7rem;
@@ -285,6 +284,7 @@ h1.entry-title {
     display: inline-block;
     height: 25px;
     width: auto;
+    margin-right: 1.5rem;
 }
 
 .button-back p {
@@ -600,24 +600,36 @@ footer,
 
 /*----------kontakt----------*/
 
+.iframe-map-container {
+    margin-bottom: 2rem !important;
+}
+
 .iframe-map {
     height: 40vh !important;
 }
 
-@media (min-width:600px) {
-    .iframe-map {
-        height: 100% !important;
-    }
-}
-
 .vaerksted-container {
-    width: 100%;
-    margin-left: 1rem !important;
+    margin: 0 !important;
 }
 
 .vaerksted-container figure {
     width: 100%;
     margin: 0 !important;
+}
+
+@media (min-width:600px) {
+    .iframe-map-container {
+        margin-bottom: 0 !important;
+    }
+
+    .iframe-map {
+        height: 100% !important;
+    }
+
+    .vaerksted-container {
+        width: 100%;
+        margin-left: 1rem !important;
+    }
 }
 
 label input,
