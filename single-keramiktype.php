@@ -15,7 +15,7 @@ get_header();
 
     <section class="single-page">
         <div class="button-back" onclick="history.back()">
-            <img src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/tilbage.svg" alt="tilbage knap svg" width="36.13" height="25">
+            <img src="https://malthekusk.one/kea/kaysenkeramik/wordpress/wp-content/uploads/2021/06/Group-499.svg" alt="tilbage knap svg" width="36.13" height="25">
             <p>Tilbage</p>
         </div>
         <div class="container-single">
