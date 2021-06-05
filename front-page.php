@@ -158,6 +158,7 @@ get_header();
                 clone.querySelector("img").alt = keramiktype.kort;
                 clone.querySelector("h3").textContent = keramiktype.navn;
                 clone.querySelector("p").textContent = keramiktype.kort;
+                clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
                 clone.querySelector("article").addEventListener("click", () => {
                     location.href = keramiktype.link;
                 });

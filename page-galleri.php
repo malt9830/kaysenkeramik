@@ -100,6 +100,7 @@ get_header();
     function filterClay() {
         console.log(this.dataset.materiale);
 
+        //Funktioner for de 4 lertyper tænder/slukker lertype-filtret
         if (this.dataset.materiale == "Lys stentøjsler" && this.classList.contains("filter-active")) {
             console.log("lightFilterOff");
             clayFilterLight = "";
@@ -132,14 +133,17 @@ get_header();
             clayFilterRecycle = this.dataset.materiale;
         }
 
+        //Viser aktive filtre
         this.classList.toggle("filter-active");
 
+        //Viser alle hvis ingen filtre er valgt
         if (clayFilterLight == "" && clayFilterDark == "" && clayFilterPorcelain == "" && clayFilterRecycle == "") {
             clayFilterAll = true;
         } else {
             clayFilterAll = false;
         }
 
+        //Start loopet igen
         showKeramiktyper();
     }
 
@@ -183,6 +187,7 @@ get_header();
                     clone.querySelector("img").alt = keramiktype.kort;
                     clone.querySelector("h3").textContent = keramiktype.navn;
                     clone.querySelector("p").textContent = keramiktype.kort;
+                    clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
                     clone.querySelector("article").addEventListener("click", () => {
                         location.href = keramiktype.link;
                     });

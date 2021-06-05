@@ -75,7 +75,7 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ||
 
             <div class="footer-title">
                 <p class="footer-logo">Kaysen Keramik</p>
-                <a class="footer-ig" href="https://www.instagram.com/kaysen_keramik/">
+                <a class="footer-ig" aria-label="Instagram" href="https://www.instagram.com/kaysen_keramik/">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
