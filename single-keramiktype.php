@@ -205,29 +205,29 @@ get_header();
             console.log("looping");
 
             //Fortsætter kun ved andet navn og samme type
-            if (singlekeramik.ktype == keramiktype.ktype && singlekeramik.navn != keramiktype.navn) {
+            if (singlekeramik.ktype == keramiktype.ktype && singlekeramik.navn != keramiktype.navn && counter < 3) {
 
                 //Tilføjer 1 counter
                 counter++;
                 console.log(`Counters: ${counter}`);
 
                 //Fortsætter kun hvis færre end 3 viste
-                if (counter <= 3) {
-                    //Her defineres, klones og udfyldes templaten med json-data
-                    let clone = template.cloneNode(true).content;
 
-                    clone.querySelector("img").src = keramiktype.billede.guid;
-                    clone.querySelector("img").alt = keramiktype.kort;
-                    clone.querySelector("h3").textContent = keramiktype.navn;
-                    clone.querySelector("p").textContent = keramiktype.kort;
-                    clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
-                    clone.querySelector("article").addEventListener("click", () => {
-                        location.href = keramiktype.link;
-                    });
+                //Her defineres, klones og udfyldes templaten med json-data
+                let clone = template.cloneNode(true).content;
 
-                    //Her indsættes den klonen i DOM
-                    container.appendChild(clone);
-                }
+                clone.querySelector("img").src = keramiktype.billede.guid;
+                clone.querySelector("img").alt = keramiktype.kort;
+                clone.querySelector("h3").textContent = keramiktype.navn;
+                clone.querySelector("p").textContent = keramiktype.kort;
+                clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
+                clone.querySelector("article").addEventListener("click", () => {
+                    location.href = keramiktype.link;
+                });
+
+                //Her indsættes den klonen i DOM
+                container.appendChild(clone);
+
             }
         })
     }
