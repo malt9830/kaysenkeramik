@@ -271,6 +271,18 @@ h1.entry-title {
     color: #B9B39B;
 }
 
+.button-back {
+    color: #D97D94;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.button-back p {
+    display: inline-block;
+    color: #D97D94;
+    font-size: 2rem;
+}
+
 /*----------header----------*/
 
 header {
@@ -550,6 +562,22 @@ footer,
 
 .iframe-map {
     height: 40vh !important;
+}
+
+@media (min-width:600px) {
+    .iframe-map {
+        height: 100% !important;
+    }
+}
+
+.vaerksted-container {
+    width: 100%;
+    margin-left: 1rem !important;
+}
+
+.vaerksted-container figure {
+    width: 100%;
+    margin: 0 !important;
 }
 
 label input,

@@ -13,8 +13,11 @@ get_header();
 ?>
 <main id="site-content" role="main">
 
-
     <section class="single-page">
+        <div class="button-back" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i>
+            <p>Tilbage</p>
+        </div>
         <div class="container-single">
             <div class="single-image">
                 <div class="single-image-main">
