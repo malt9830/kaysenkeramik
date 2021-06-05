@@ -272,15 +272,27 @@ h1.entry-title {
 }
 
 .button-back {
-    color: #D97D94;
-    font-size: 2rem;
+    display: flex;
+    grid-gap: 1rem;
+    align-items: center;
+    color: #000;
+    font-size: 1.7rem;
     cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.button-back img {
+    display: inline-block;
+    height: 25px;
+    width: auto;
 }
 
 .button-back p {
     display: inline-block;
-    color: #D97D94;
+    color: #2E2E2E;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
+    margin: 0;
 }
 
 /*----------header----------*/
