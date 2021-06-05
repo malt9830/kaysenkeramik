@@ -154,7 +154,7 @@ h3 {
 p,
 li {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #2E2E2E;
 }
 
@@ -754,7 +754,7 @@ input[type="submit"]:hover {
 }
 
 .article .text h3 {
-    font-size: 2rem !important;
+    font-size: 1.7rem !important;
 }
 
 .article .text h3,
@@ -785,12 +785,12 @@ input[type="submit"]:hover {
     padding-bottom: 3rem !important;
 }
 
-.container-gallery .bottom a {
+.container .bottom a {
     padding: 1rem !important;
     font-size: 1.3rem !important;
 }
 
-@media(min-width:950px) {
+@media(min-width:751px) {
     .container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -803,7 +803,7 @@ input[type="submit"]:hover {
         margin: 0;
     }
 
-    .container-gallery .bottom a {
+    .container .bottom a {
         padding: 2rem !important;
         font-size: 2rem !important;
     }
