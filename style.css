@@ -722,6 +722,10 @@ input[type="submit"]:hover {
 
 /*----------proces----------*/
 
+.process-video video {
+    pointer-events: all !important;
+}
+
 .clay-container {
     position: relative;
     margin: 0 auto !important;
