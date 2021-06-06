@@ -36,10 +36,12 @@ get_header();
                 <div class="single-text-top">
                     <h2 class="single-text-title"></h2>
                     <p class="single-text-desc"></p>
+                    <p class="single-text-unique">Kaysen Keramik er håndlavet og unikt, så der findes kun ét eksemplar af dette produkt.</p>
                 </div>
                 <div class="single-text-box">
                     <p><b>Produktdetaljer</b></p>
                     <hr>
+                    <p class="single-text-price"></p>
                     <p class="single-text-material"></p>
                     <p class="single-text-content"></p>
                     <p class="single-text-height"></p>
@@ -130,6 +132,9 @@ get_header();
             document.querySelector(".cup-sizes").classList.add("none");
         }
 
+        //Vis pris
+        document.querySelector(".single-text-price").textContent = `Pris: ${singlekeramik.pris} kr`
+
         //Vis materiale
         document.querySelector(".single-text-material").textContent = `Materiale: ${singlekeramik.materiale}`;
 
@@ -151,7 +156,7 @@ get_header();
 
         //Vis detaljer
         if (singlekeramik.guld == "1") {
-            document.querySelector(".single-text-details").textContent = `Keramikken tåler maskinopvask. Dog vil guldet med tiden uundgåeligt blive slidt. Da produktet er dekoreret med ægte guld, kan det derfor ikke komme i mikroovnen.`;
+            document.querySelector(".single-text-details").textContent = `Keramikken tåler maskinopvask. Dog vil guld slides over tid. Da produktet er dekoreret med ægte guld, kan det ikke komme i mikroovnen. `;
         } else {
             document.querySelector(".single-text-details").textContent = `Keramikken tåler både maskinopvask og mikroovn.`
         }
