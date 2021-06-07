@@ -340,8 +340,9 @@ body:not(.overlay-header) .primary-menu > li > a,
 }
 
 .primary-menu > li > a {
-    color: #2e2e2e !important;
+    color: #2E2E2E !important;
     font-size: 1.5rem !important;
+    font-weight: 400 !important;
 }
 
 .primary-menu li.current-menu-item > a,
@@ -352,13 +353,22 @@ body:not(.overlay-header) .primary-menu > li > a,
 }
 
 .primary-menu li.current-menu-item > a {
-    font-weight: 600;
+    font-weight: 500 !important;
 }
 
 .mobile-menu a {
-    color: #2e2e2e !important;
-    font-weight: 200 !important;
+    color: #2E2E2E !important;
+    font-weight: 400 !important;
     font-size: 1.85rem !important;
+}
+
+.modal-menu a:focus,
+.modal-menu a:hover,
+.modal-menu li.current-menu-item > .ancestor-wrapper > a,
+.modal-menu li.current_page_ancestor > .ancestor-wrapper > a {
+    text-decoration: none;
+    color: #E3A5B4 !important;
+    font-weight: 500 !important;
 }
 
 .mobile-menu li {
@@ -394,6 +404,10 @@ button.close-nav-toggle img:first-child {
 
 .menu-modal .section-inner {
     width: 100%;
+}
+
+.modal-menu {
+    top: 2rem;
 }
 
 /*----------footer----------*/
@@ -958,7 +972,7 @@ input[type="submit"]:hover {
 }
 
 .single-text-price {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
 }
 
 .single-text-details {
