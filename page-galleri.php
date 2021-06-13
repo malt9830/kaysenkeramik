@@ -185,6 +185,8 @@ get_header();
 
                     clone.querySelector("img").src = keramiktype.billede.guid;
                     clone.querySelector("img").alt = keramiktype.kort;
+                    clone.querySelector("img").width = "207";
+                    clone.querySelector("img").height = "205";
                     clone.querySelector("h3").textContent = keramiktype.navn;
                     clone.querySelector("p").textContent = keramiktype.kort;
                     clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);

@@ -144,18 +144,22 @@ get_header();
 
         //Loopet for kloningen af json-dataen
         keramiktyper.forEach(keramiktype => {
-            console.log("looping");
 
-            //Tilføjer én counter og tjekker om loopet skal fortsættes eller stoppes, således kun 3 kloner indsættes i DOM
-            counter++;
-            console.log(counter);
+            if (counter < 3) {
+                console.log("looping");
+                //Tilføjer én counter og tjekker om loopet skal fortsættes eller stoppes, således kun 3 kloner indsættes i DOM
+                counter++;
+                console.log(counter);
 
-            if (counter <= 3) {
                 //Her defineres, klones og udfyldes templaten med json-data
                 let clone = template.cloneNode(true).content;
 
                 clone.querySelector("img").src = keramiktype.billede.guid;
                 clone.querySelector("img").alt = keramiktype.kort;
+
+                clone.querySelector("img").width = "207";
+                clone.querySelector("img").height = "205";
+
                 clone.querySelector("h3").textContent = keramiktype.navn;
                 clone.querySelector("p").textContent = keramiktype.kort;
                 clone.querySelector("a").setAttribute("href", `${keramiktype.link}`);
